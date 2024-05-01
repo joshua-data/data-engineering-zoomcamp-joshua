@@ -3,4 +3,4 @@ week-01/02-ingesting-external-data-to-postgres/ny_taxi_postgres_data
 week-01/02-ingesting-external-data-to-postgres/yellow_tripdata_2021-01.csv
 week-01/02-ingesting-external-data-to-postgres/yellow_tripdata_2021-01.parquet
 
-week-01/03-terraform-basics/keys
+week-01/03-terraform/keys

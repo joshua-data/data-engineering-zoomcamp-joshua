@@ -5,7 +5,7 @@ variable "credentials" {
 
 variable "project" {
   description = "Project"
-  default     = "terraform-demo-421007"
+  default     = "ny-rides-joshua"
 }
 
 variable "region" {
@@ -25,7 +25,7 @@ variable "bigquery_dataset_name" {
 
 variable "gcs_bucket_name" {
   description = "My Storage Bucket Name"
-  default     = "terraform-demo-421007-terra-bucket"
+  default     = "ny-rides-joshua-terra-bucket"
 }
 
 variable "gcs_storage_class" {

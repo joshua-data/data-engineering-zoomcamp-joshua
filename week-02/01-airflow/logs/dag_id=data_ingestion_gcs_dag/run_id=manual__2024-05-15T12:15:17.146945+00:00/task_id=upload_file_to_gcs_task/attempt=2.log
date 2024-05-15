@@ -1,0 +1,60 @@
+[2024-05-15T12:25:37.263+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-15T12:25:37.269+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.upload_file_to_gcs_task manual__2024-05-15T12:15:17.146945+00:00 [queued]>
+[2024-05-15T12:25:37.273+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.upload_file_to_gcs_task manual__2024-05-15T12:15:17.146945+00:00 [queued]>
+[2024-05-15T12:25:37.273+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-05-15T12:25:37.278+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): upload_file_to_gcs_task> on 2024-05-15 12:15:17.146945+00:00
+[2024-05-15T12:25:37.281+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=16782) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-15T12:25:37.282+0000] {standard_task_runner.py:63} INFO - Started process 16784 to run task
+[2024-05-15T12:25:37.282+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'upload_file_to_gcs_task', 'manual__2024-05-15T12:15:17.146945+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/data_ingesting_gcs_dag.py', '--cfg-path', '/tmp/tmpqak21jd2']
+[2024-05-15T12:25:37.283+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask upload_file_to_gcs_task
+[2024-05-15T12:25:37.303+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_gcs_dag.upload_file_to_gcs_task manual__2024-05-15T12:15:17.146945+00:00 [running]> on host 1fcdfe24c089
+[2024-05-15T12:25:37.337+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_gcs_dag' AIRFLOW_CTX_TASK_ID='upload_file_to_gcs_task' AIRFLOW_CTX_EXECUTION_DATE='2024-05-15T12:15:17.146945+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-15T12:15:17.146945+00:00'
+[2024-05-15T12:25:37.338+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-15T12:25:40.350+0000] {_metadata.py:139} WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: timed out
+[2024-05-15T12:25:40.354+0000] {_metadata.py:139} WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [Errno 111] Connection refused
+[2024-05-15T12:25:40.357+0000] {_metadata.py:139} WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [Errno 111] Connection refused
+[2024-05-15T12:25:40.358+0000] {_default.py:338} WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+[2024-05-15T12:25:40.359+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-15T12:25:40.361+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data_ingesting_gcs_dag.py", line 53, in upload_file_to_gcs
+    client = storage.Client()
+             ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/storage/client.py", line 226, in __init__
+    super(Client, self).__init__(
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/client/__init__.py", line 320, in __init__
+    _ClientProjectMixin.__init__(self, project=project, credentials=credentials)
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/client/__init__.py", line 268, in __init__
+    project = self._determine_default(project)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/client/__init__.py", line 287, in _determine_default
+    return _determine_default_project(project)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/_helpers/__init__.py", line 152, in _determine_default_project
+    _, project = google.auth.default()
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/auth/_default.py", line 691, in default
+    raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+google.auth.exceptions.DefaultCredentialsError: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+[2024-05-15T12:25:40.381+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_gcs_dag, task_id=upload_file_to_gcs_task, run_id=manual__2024-05-15T12:15:17.146945+00:00, execution_date=20240515T121517, start_date=20240515T122537, end_date=20240515T122540
+[2024-05-15T12:25:40.395+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 10 for task upload_file_to_gcs_task (Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.; 16784)
+[2024-05-15T12:25:40.413+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-15T12:25:40.432+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-15T12:25:40.435+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

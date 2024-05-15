@@ -1,0 +1,20 @@
+[2024-05-15T13:18:04.327+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-15T13:18:04.334+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.change_csv_to_parquet_task manual__2024-05-15T13:14:46.871928+00:00 [queued]>
+[2024-05-15T13:18:04.338+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.change_csv_to_parquet_task manual__2024-05-15T13:14:46.871928+00:00 [queued]>
+[2024-05-15T13:18:04.339+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-05-15T13:18:04.345+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): change_csv_to_parquet_task> on 2024-05-15 13:14:46.871928+00:00
+[2024-05-15T13:18:04.349+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=106) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-15T13:18:04.349+0000] {standard_task_runner.py:63} INFO - Started process 108 to run task
+[2024-05-15T13:18:04.350+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'change_csv_to_parquet_task', 'manual__2024-05-15T13:14:46.871928+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/data_ingesting_gcs_dag.py', '--cfg-path', '/tmp/tmpauuuunv1']
+[2024-05-15T13:18:04.351+0000] {standard_task_runner.py:91} INFO - Job 40: Subtask change_csv_to_parquet_task
+[2024-05-15T13:18:04.373+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_gcs_dag.change_csv_to_parquet_task manual__2024-05-15T13:14:46.871928+00:00 [running]> on host e0baaada026d
+[2024-05-15T13:18:04.407+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_gcs_dag' AIRFLOW_CTX_TASK_ID='change_csv_to_parquet_task' AIRFLOW_CTX_EXECUTION_DATE='2024-05-15T13:14:46.871928+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-15T13:14:46.871928+00:00'
+[2024-05-15T13:18:04.408+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-15T13:18:04.417+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-15T13:18:04.417+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-15T13:18:04.421+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag, task_id=change_csv_to_parquet_task, run_id=manual__2024-05-15T13:14:46.871928+00:00, execution_date=20240515T131446, start_date=20240515T131804, end_date=20240515T131804
+[2024-05-15T13:18:04.452+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-15T13:18:04.464+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-15T13:18:04.464+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

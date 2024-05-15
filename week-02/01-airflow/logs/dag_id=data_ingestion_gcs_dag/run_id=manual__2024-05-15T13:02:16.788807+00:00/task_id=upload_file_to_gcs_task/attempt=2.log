@@ -1,0 +1,45 @@
+[2024-05-15T13:07:46.619+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-15T13:07:46.626+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.upload_file_to_gcs_task manual__2024-05-15T13:02:16.788807+00:00 [queued]>
+[2024-05-15T13:07:46.630+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.upload_file_to_gcs_task manual__2024-05-15T13:02:16.788807+00:00 [queued]>
+[2024-05-15T13:07:46.630+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-05-15T13:07:46.635+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): upload_file_to_gcs_task> on 2024-05-15 13:02:16.788807+00:00
+[2024-05-15T13:07:46.639+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=84) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-15T13:07:46.640+0000] {standard_task_runner.py:63} INFO - Started process 86 to run task
+[2024-05-15T13:07:46.640+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'upload_file_to_gcs_task', 'manual__2024-05-15T13:02:16.788807+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/data_ingesting_gcs_dag.py', '--cfg-path', '/tmp/tmp_40955zt']
+[2024-05-15T13:07:46.641+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask upload_file_to_gcs_task
+[2024-05-15T13:07:46.663+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_gcs_dag.upload_file_to_gcs_task manual__2024-05-15T13:02:16.788807+00:00 [running]> on host 6bd10c6a7f4c
+[2024-05-15T13:07:46.700+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_gcs_dag' AIRFLOW_CTX_TASK_ID='upload_file_to_gcs_task' AIRFLOW_CTX_EXECUTION_DATE='2024-05-15T13:02:16.788807+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-15T13:02:16.788807+00:00'
+[2024-05-15T13:07:46.701+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-15T13:07:46.799+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-15T13:07:46.799+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data_ingesting_gcs_dag.py", line 57, in upload_file_to_gcs
+    blob.upload_from_filename(local_fpath)
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/storage/blob.py", line 2959, in upload_from_filename
+    self._handle_filename_and_upload(
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/storage/blob.py", line 2827, in _handle_filename_and_upload
+    with open(filename, "rb") as file_obj:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/yellow_tripdata_2021-01.parquet'
+[2024-05-15T13:07:46.805+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_gcs_dag, task_id=upload_file_to_gcs_task, run_id=manual__2024-05-15T13:02:16.788807+00:00, execution_date=20240515T130216, start_date=20240515T130746, end_date=20240515T130746
+[2024-05-15T13:07:46.810+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 30 for task upload_file_to_gcs_task ([Errno 2] No such file or directory: '/opt/airflow/yellow_tripdata_2021-01.parquet'; 86)
+[2024-05-15T13:07:46.819+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-15T13:07:46.830+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-15T13:07:46.832+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

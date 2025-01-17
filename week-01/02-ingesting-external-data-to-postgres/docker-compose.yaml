@@ -1,5 +1,5 @@
 services:
-  pgdatabase:
+  pg-database:
     image: postgres:13
     environment:
       - POSTGRES_USER=root

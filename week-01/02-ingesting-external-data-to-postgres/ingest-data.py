@@ -1,89 +1,83 @@
+import pandas as pd
+from sqlalchemy import create_engine
+
 import os
 from time import time
-
-import pandas as pd
-
-from sqlalchemy import create_engine
 import argparse
 
 def main(params):
 
-    # Parameters
-    user = params.user
-    password = params.password
+    # Parameters    
+
     host = params.host
     port = params.port
+    user = params.user
+    password = params.password
+
     db = params.db
     table_name = params.table_name
-    url = params.url
-    csv_name = 'yellow_tripdata_2021-01'
+    file_url = params.file_url
 
-    wget = f"wget {url} -O {csv_name}.parquet"
+    fpath_raw = 'yellow_tripdata_2021-01'
+
+    # 웹에서 파일 가져오기
+    wget = f'wget {file_url} -O {fpath_raw}.parquet'
     os.system(wget)
 
-    # DB Engine Connection
-    db_url = f"postgresql://{user}:{password}@{host}:{port}/{db}"
-    engine = create_engine(db_url)
+    # Postgres DB 연결하기
+    postgres_url = f'postgresql://{user}:{password}@{host}:{port}/{db}'
+    engine = create_engine(postgres_url)
     engine.connect()
 
     # Parquet to CSV
     df = pd.read_parquet(
-        f"{csv_name}.parquet",
-        engine = 'pyarrow'
+        f'{fpath_raw}.parquet',
+        engine='pyarrow',
     )
-    df.to_csv(
-        f"{csv_name}.csv"
-    )
+    df.to_csv(f'{fpath_raw}.csv', index=False)
 
-    # DataFrame Iteration
+    # Iteration 객체 만들기
     df_iter = pd.read_csv(
-        f"{csv_name}.csv",
-        index_col = 0,
-        iterator = True,
-        chunksize = 100000
+        f'{fpath_raw}.csv',
+        index_col=0,
+        iterator=True,
+        chunksize=100000,
     )
 
-    # Start to Upload Data
+    # DB 업로드 시작
     while True:
-        t_start = time()
+
+        start_ts = time()
 
         try:
             df = next(df_iter)
-        except StopIteration:
-            print("No more chunks to precess. Exiting loop.")
+        except:
             break
-
-        # Edit Column Data Type
         df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
         df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
-
-        # Insert to the Table
         df.to_sql(
-            name = 'yellow_taxi_data',
-            con = engine,
-            if_exists = 'append' # Record to append if the table already exists.
+            name=table_name,
+            con=engine,
+            if_exists='append',
         )
 
-        t_end = time()
+        end_ts = time()
 
-        print('Inserted another chunk, took %.3f seconds.' % (t_end - t_start))
-
+        print(f'Chunk inserted taking {end_ts - start_ts:.2f} seconds.')
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(
-        description = "Ingest CSV data to Postgres"
+        description='Ingest Parquet Data to Postgres.'
     )
 
-    # user, password, host, port, db name, table name, url of the csv
-    parser.add_argument('--user', help='user name for postgres')
-    parser.add_argument('--password', help='password for postgres')
-    parser.add_argument('--host', help='host for postgres')
-    parser.add_argument('--port', help='port for postgres')
-    parser.add_argument('--db', help='database name for postgres')
-    parser.add_argument('--table_name', help='name of the table where we will write the results to')
-    parser.add_argument('--url', help='url of the csv file')
+    parser.add_argument('--host', help='postgres host')
+    parser.add_argument('--port', help='postgres port')
+    parser.add_argument('--user', help='postgres user')
+    parser.add_argument('--password', help='postgres password')
+    parser.add_argument('--db', help='postgres db name')
+    parser.add_argument('--table_name', help='postgres table name')
+    parser.add_argument('--file_url', help='parquet file url')
 
     args = parser.parse_args()
-
     main(args)

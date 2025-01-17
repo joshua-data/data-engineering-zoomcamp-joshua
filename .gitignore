@@ -1,6 +1,8 @@
-week-01/02-ingesting-external-data-to-postgres/.ipynb_checkpoints
-week-01/02-ingesting-external-data-to-postgres/ny_taxi_postgres_data
-week-01/02-ingesting-external-data-to-postgres/yellow_tripdata_2021-01.csv
-week-01/02-ingesting-external-data-to-postgres/yellow_tripdata_2021-01.parquet
+venv/
+keys/
+.ipynb_checkpoints/
 
-week-01/03-terraform/keys
+ny_taxi_postgres_data/
+
+yellow_tripdata_2021-01.csv
+yellow_tripdata_2021-01.parquet

@@ -1,6 +1,6 @@
 variable "project" {
   description = "Project"
-  default     = "terraform-demo-421007"
+  default     = "de-zoomcamp-joshua"
 }
 
 variable "region" {
@@ -20,7 +20,7 @@ variable "bigquery_dataset_name" {
 
 variable "bucket_name" {
   description = "Storage Bucket Name"
-  default     = "terraform-demo-421007-terra-bucket"
+  default     = "de-zoomcamp-joshua-terra-bucket"
 }
 
 variable "storage_class" {

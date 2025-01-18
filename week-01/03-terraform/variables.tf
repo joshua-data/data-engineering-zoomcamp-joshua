@@ -1,8 +1,3 @@
-variable "credentials" {
-  description = "GCP Credentials"
-  default     = "./keys/credentials.json"
-}
-
 variable "project" {
   description = "Project"
   default     = "terraform-demo-421007"

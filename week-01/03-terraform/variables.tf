@@ -1,11 +1,11 @@
 variable "credentials" {
-  description = "My Credentials"
-  default     = "~/.google/credentials/google_credentials.json"
+  description = "GCP Credentials"
+  default     = "./keys/my-creds.json"
 }
 
 variable "project" {
   description = "Project"
-  default     = "ny-rides-joshua"
+  default     = "terraform-demo-421007"
 }
 
 variable "region" {
@@ -14,21 +14,21 @@ variable "region" {
 }
 
 variable "location" {
-  description = "Project Location"
+  description = "Location"
   default     = "ASIA-NORTHEAST3"
 }
 
 variable "bigquery_dataset_name" {
-  description = "My BigQuery Dataset Name"
+  description = "BigQuery Dataset Name"
   default     = "demo_dataset"
 }
 
-variable "gcs_bucket_name" {
-  description = "My Storage Bucket Name"
-  default     = "ny-rides-joshua-terra-bucket"
+variable "bucket_name" {
+  description = "Storage Bucket Name"
+  default     = "terraform-demo-421007-terra-bucket"
 }
 
-variable "gcs_storage_class" {
-  description = "Bucket Storage Class"
+variable "storage_class" {
+  description = "Storage Class"
   default     = "STANDARD"
 }

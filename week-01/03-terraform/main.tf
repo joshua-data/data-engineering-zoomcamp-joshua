@@ -9,12 +9,12 @@ terraform {
 
 provider "google" {
   credentials = file(var.credentials)
-  project     = var.project
-  region      = var.region
+  project = var.project
+  region  = var.region
 }
 
 resource "google_storage_bucket" "demo-bucket" {
-  name          = var.gcs_bucket_name
+  name          = var.bucket_name
   location      = var.location
   force_destroy = true
 

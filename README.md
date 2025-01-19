@@ -31,3 +31,12 @@
 - [x] [2.3.1. Setup Airflow Environment with Docker Compose](https://youtu.be/lqDMzReAtrw?si=Se56KquyYJ8f3MfV)
 - [x] [2.3.2. Ingesting Data into GCP with Airflow](https://youtu.be/9ksX9REfL8w?si=bwONmw4pYZyB8obK)
 - [x] [2.3.3. Ingesting Data into Local Postgres with Airflow](https://youtu.be/s2U8MWJH5xA?si=SIjA5BqBbf20XGf7)
+
+#### Week 3
+- [ ] [3.1.1 - Data Warehouse and BigQuery](https://www.youtube.com/watch?v=jrHljAoD6nM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+- [ ] [3.1.2 - Partioning and Clustering](https://www.youtube.com/watch?v=-CqXf7vhhDs&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+- [ ] [3.2.1 - BigQuery Best Practices](https://www.youtube.com/watch?v=k81mLJVX08w&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+- [ ] [3.2.2 - Internals of BigQuery](https://www.youtube.com/watch?v=eduHi1inM4s&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+- [ ] [3.3.1 - BigQuery Machine Learning](https://www.youtube.com/watch?v=B-WtpB0PuG4&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+- [ ] [3.3.2 - BigQuery Machine Learning Deployment](https://www.youtube.com/watch?v=BjARzEWaznU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+

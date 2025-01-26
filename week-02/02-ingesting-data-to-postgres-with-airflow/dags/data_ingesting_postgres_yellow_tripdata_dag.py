@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 import pytz
 
-from ingest_data import save_to_csv, load_to_postgres
+from ingest_yellow_tripdata import save_to_csv, load_to_postgres
 
 from airflow import DAG
 from airflow.models import TaskInstance
@@ -20,8 +20,8 @@ INPUT_FNAME_CSV = f'{INPUT_FNAME_RAW}.csv'
 INPUT_URL_PARQUET = f'https://d37ci6vzurychx.cloudfront.net/trip-data/{INPUT_FNAME_PARQUET}'
 
 OUTPUT_FOLDERPATH = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
-OUTPUT_FNAME_PARQUET = 'output_{{ execution_date.strftime(\'%Y-%m\') }}.parquet'
-OUTPUT_FNAME_CSV = 'output_{{ execution_date.strftime(\'%Y-%m\') }}.csv'
+OUTPUT_FNAME_PARQUET = 'output_yellow_{{ execution_date.strftime(\'%Y-%m\') }}.parquet'
+OUTPUT_FNAME_CSV = 'output_yellow_{{ execution_date.strftime(\'%Y-%m\') }}.csv'
 OUTPUT_FPATH_PARQUET = f'{OUTPUT_FOLDERPATH}/{OUTPUT_FNAME_PARQUET}'
 OUTPUT_FPATH_CSV = f'{OUTPUT_FOLDERPATH}/{OUTPUT_FNAME_CSV}'
 
@@ -65,7 +65,7 @@ def skip_task():
 # ====================================================================================
 
 with DAG(
-    dag_id="data_ingesting_postgres_dag",
+    dag_id="data_ingesting_postgres_yellow_tripdata_dag",
     schedule_interval="0 6 2 * *",
     default_args=default_args,
     catchup=True,

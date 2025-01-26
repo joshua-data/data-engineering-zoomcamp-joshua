@@ -12,6 +12,16 @@ services:
     networks:
       - airflow
 
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "8081:80"
+    networks:
+      - airflow
+
 networks:
   airflow:
     external: true

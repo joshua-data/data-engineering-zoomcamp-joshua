@@ -1,0 +1,108 @@
+# Configuring Source Tables
+
+version: 2
+
+sources:
+
+  - name: dimensions
+    description: >
+      Taxi Zones roughly based on NYC Department of City Planning's Neighborhood
+      Tabulation Areas (NTAs) and are meant to approximate neighborhoods, so you can see which
+      neighborhood a passenger was picked up in, and which neighborhood they were dropped off in. 
+      Includes associated service_zone (EWR, Boro Zone, Yellow Zone)
+    database: ny_taxi
+    schema: public
+    quoting:
+      database: false
+      schema: true
+      identifier: true
+    tables:
+      - name: taxi_zone_lookup
+        identifier: taxi_zone_lookup
+        description: "Taxi Zone Lookup Table"
+
+  - name: yellow_taxi_trips
+    description: "Yellow Taxi Trips Table Sets"
+    database: ny_taxi
+    schema: public
+    quoting:
+      database: false
+      schema: true
+      identifier: true
+    tables:
+      - name: m2024_01
+        identifier: yellow_taxi_trips_2024_01
+        description: "Yellow Taxi Trips Table (2024-01)"
+      - name: m2024_02
+        identifier: yellow_taxi_trips_2024_02
+        description: "Yellow Taxi Trips Table (2024-02)"
+      - name: m2024_03
+        identifier: yellow_taxi_trips_2024_03
+        description: "Yellow Taxi Trips Table (2024-03)"
+      - name: m2024_04      
+        identifier: yellow_taxi_trips_2024_04
+        description: "Yellow Taxi Trips Table (2024-04)"
+      - name: m2024_05
+        identifier: yellow_taxi_trips_2024_05
+        description: "Yellow Taxi Trips Table (2024-05)"
+      - name: m2024_06      
+        identifier: yellow_taxi_trips_2024_06
+        description: "Yellow Taxi Trips Table (2024-06)"
+      - name: m2024_07      
+        identifier: yellow_taxi_trips_2024_07
+        description: "Yellow Taxi Trips Table (2024-07)"
+      - name: m2024_08      
+        identifier: yellow_taxi_trips_2024_08
+        description: "Yellow Taxi Trips Table (2024-08)"
+      - name: m2024_09      
+        identifier: yellow_taxi_trips_2024_09
+        description: "Yellow Taxi Trips Table (2024-09)"
+      - name: m2024_10      
+        identifier: yellow_taxi_trips_2024_10
+        description: "Yellow Taxi Trips Table (2024-10)"
+      - name: m2024_11      
+        identifier: yellow_taxi_trips_2024_11
+        description: "Yellow Taxi Trips Table (2024-11)"
+
+  - name: green_taxi_trips
+    description: "Green Taxi Trips Table Sets"
+    database: ny_taxi
+    schema: public
+    quoting:
+      database: false
+      schema: true
+      identifier: true
+    tables:
+      - name: m2024_01
+        identifier: green_taxi_trips_2024_01
+        description: "Green Taxi Trips Table (2024-01)"
+      - name: m2024_02
+        identifier: green_taxi_trips_2024_02
+        description: "Green Taxi Trips Table (2024-02)"
+      - name: m2024_03
+        identifier: green_taxi_trips_2024_03
+        description: "Green Taxi Trips Table (2024-03)"
+      - name: m2024_04      
+        identifier: green_taxi_trips_2024_04
+        description: "Green Taxi Trips Table (2024-04)"
+      - name: m2024_05
+        identifier: green_taxi_trips_2024_05
+        description: "Green Taxi Trips Table (2024-05)"
+      - name: m2024_06      
+        identifier: green_taxi_trips_2024_06
+        description: "Green Taxi Trips Table (2024-06)"
+      - name: m2024_07      
+        identifier: green_taxi_trips_2024_07
+        description: "Green Taxi Trips Table (2024-07)"
+      - name: m2024_08      
+        identifier: green_taxi_trips_2024_08
+        description: "Green Taxi Trips Table (2024-08)"
+      - name: m2024_09      
+        identifier: green_taxi_trips_2024_09
+        description: "Green Taxi Trips Table (2024-09)"
+      - name: m2024_10      
+        identifier: green_taxi_trips_2024_10
+        description: "Green Taxi Trips Table (2024-10)"
+      - name: m2024_11      
+        identifier: green_taxi_trips_2024_11
+        description: "Green Taxi Trips Table (2024-11)"

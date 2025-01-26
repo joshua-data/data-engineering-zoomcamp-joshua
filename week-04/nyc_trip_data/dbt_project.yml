@@ -15,7 +15,6 @@ clean-targets:
 
 models:
   nyc_trip_data:
-    +schema: dbt
     staging:
       +materialized: view
     core:

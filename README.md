@@ -45,4 +45,4 @@
 - [x] [4.3.1 - Build the First dbt Models](https://www.youtube.com/watch?v=ueVy2N54lyc&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [4.3.2 - Testing and Documenting the Project](https://www.youtube.com/watch?v=2dNJXHFCHaY&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [4.4.2 - Deployment Using dbt Locally](https://www.youtube.com/watch?v=Cs9Od1pcrzM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
-- [ ] [4.5.2 - Visualising the data with Metabase](https://www.youtube.com/watch?v=BnLkrA7a6gM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+- [x] [4.5.2 - Visualising the data with Metabase](https://www.youtube.com/watch?v=BnLkrA7a6gM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)

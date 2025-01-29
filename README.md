@@ -39,7 +39,7 @@
 - [x] [3.2.1 - BigQuery Best Practices](https://www.youtube.com/watch?v=k81mLJVX08w&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [3.2.2 - Internals of BigQuery](https://www.youtube.com/watch?v=eduHi1inM4s&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### Week 4: `Analytics Engineering (dbt)`
+#### Week 4: `Analytics Engineering (dbt)`
 
 - [x] [4.1.1 - Analytics Engineering Basics](https://www.youtube.com/watch?v=uF76d5EmdtU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [4.1.2 - What is dbt?](https://www.youtube.com/watch?v=4eCouvVOJUw&list=PL3MmuxUbc_hKVX8VnwWCPaWlIHf1qmg8s)
@@ -49,7 +49,7 @@
 - [x] [4.4.2 - Deployment Using dbt Locally](https://www.youtube.com/watch?v=Cs9Od1pcrzM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [4.5.2 - Visualising the data with Metabase](https://www.youtube.com/watch?v=BnLkrA7a6gM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### Week 5: `Batch (Spark)`
+#### Week 5: `Batch (Spark)`
 
 - [x] [5.1.1 - Introduction to Batch processing](https://www.youtube.com/watch?v=dcHe5Fl3MF8&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [5.1.2 - Introduction to Spark](https://www.youtube.com/watch?v=FhaqbEOuQ8U&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)

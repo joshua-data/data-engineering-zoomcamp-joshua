@@ -11,7 +11,7 @@
 
 ### Lectures List
 
-#### Week 1
+#### Week 1: `Docker & Terraform`
 
 - [x] [1.1.1. Introduction to Google Cloud Platform](https://youtu.be/18jIzE41fJ4?si=gW4L3FsYIy6BKDZU)
 - [x] [1.2.1. Introduction to Docker](https://youtu.be/EYNwNlOrpr0?si=S47DaRXkKmBsXrkm)
@@ -25,20 +25,21 @@
 - [x] [1.4.1. Setting up the Environment on Google Cloud (Cloud VM + SSH Access)](https://youtu.be/ae-CV2KfoN0?si=h5A2VPVKowKX8iY9)
 - [x] [1.5.1. Port Mapping and Networks in Docker](https://youtu.be/tOr4hTsHOzU?si=TJILfj8GkWWzQn_z)
 
-#### Week 2
+#### Week 2: `Workflow Orchestration (Airflow)`
 
 - [x] [2.2.1. Introduction to Workflow Orchestration](https://youtu.be/0yK7LXwYeD0?si=lFmijd8wQmwPyqlk)
 - [x] [2.3.1. Setup Airflow Environment with Docker Compose](https://youtu.be/lqDMzReAtrw?si=Se56KquyYJ8f3MfV)
 - [x] [2.3.2. Ingesting Data into GCP with Airflow](https://youtu.be/9ksX9REfL8w?si=bwONmw4pYZyB8obK)
 - [x] [2.3.3. Ingesting Data into Local Postgres with Airflow](https://youtu.be/s2U8MWJH5xA?si=SIjA5BqBbf20XGf7)
 
-#### Week 3
+#### Week 3: `Data Warehouse (BigQuery)`
+
 - [x] [3.1.1 - Data Warehouse and BigQuery](https://www.youtube.com/watch?v=jrHljAoD6nM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [3.1.2 - Partioning and Clustering](https://www.youtube.com/watch?v=-CqXf7vhhDs&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [3.2.1 - BigQuery Best Practices](https://www.youtube.com/watch?v=k81mLJVX08w&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [3.2.2 - Internals of BigQuery](https://www.youtube.com/watch?v=eduHi1inM4s&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### Week 4
+### Week 4: `Analytics Engineering (dbt)`
 
 - [x] [4.1.1 - Analytics Engineering Basics](https://www.youtube.com/watch?v=uF76d5EmdtU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [4.1.2 - What is dbt?](https://www.youtube.com/watch?v=4eCouvVOJUw&list=PL3MmuxUbc_hKVX8VnwWCPaWlIHf1qmg8s)
@@ -48,7 +49,7 @@
 - [x] [4.4.2 - Deployment Using dbt Locally](https://www.youtube.com/watch?v=Cs9Od1pcrzM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [4.5.2 - Visualising the data with Metabase](https://www.youtube.com/watch?v=BnLkrA7a6gM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### Week 5
+### Week 5: `Batch (Spark)`
 
 - [x] [5.1.1 - Introduction to Batch processing](https://www.youtube.com/watch?v=dcHe5Fl3MF8&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 - [x] [5.1.2 - Introduction to Spark](https://www.youtube.com/watch?v=FhaqbEOuQ8U&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)

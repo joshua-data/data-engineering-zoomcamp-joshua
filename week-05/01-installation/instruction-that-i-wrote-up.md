@@ -135,9 +135,9 @@
 1. Install Acaconda.
 
 ```bash
-    wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
-    bash Anaconda3-2024.02-1-Linux-x86_64.sh
-    rm Anaconda3-2024.02-1-Linux-x86_64.sh
+    wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+    bash Anaconda3-2022.10-Linux-x86_64.sh
+    rm Anaconda3-2022.10-Linux-x86_64.sh
 ```
 
 2. Connect python3 to python with the symbolic link.

@@ -2,6 +2,10 @@
 
 > This repository contains my personal study notes and progress throughout the **Data Engineering Zoomcamp 2023** course.
 
+### The Pipeline that I Illustrated
+
+![](assets/overall-pipeline.png)
+
 ### Useful Links
 - [GitHub Repo](https://github.com/DataTalksClub/data-engineering-zoomcamp)
 - [Slack](https://datatalks.club/slack.html)
